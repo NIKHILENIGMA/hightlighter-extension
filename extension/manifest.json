@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Website Highlight Saver",
+  "version": "1.0.0",
+  "description": "Saves webpage text highlights locally and generates AI summaries.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon.jpg"
+    }
+  },
+  "icons": {
+    "128": "icon.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

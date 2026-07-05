@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Highlight Saver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <span class="logo-icon">✨</span>
+        <h1 class="logo-title">Highlighter</h1>
+      </div>
+    </header>
+
+    <!-- Search & Filter Area -->
+    <div class="search-bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="search-input" placeholder="Search highlights..." />
+      <button id="clear-search-btn" class="hidden">✕</button>
+    </div>
+
+    <!-- Highlights List -->
+    <main class="main-content">
+      <div id="highlights-list" class="highlights-list">
+        <!-- Highlights dynamically inserted here -->
+      </div>
+      
+      <!-- Empty State -->
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">📂</div>
+        <h3>No highlights saved yet</h3>
+        <p>Highlight text on any website and click "Save Highlight" to see them here.</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span id="highlights-count">0 highlights</span>
+      <button id="clear-all-btn" class="text-btn">Clear All</button>
+    </footer>
+  </div>
+
+  <!-- Custom Alert Dialog (Modal Confirmation) -->
+  <div id="alert-dialog" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h3 id="alert-title" class="modal-title">Are you absolutely sure?</h3>
+      <p id="alert-desc" class="modal-desc">This action cannot be undone. This will permanently delete all highlights from the local database.</p>
+      <div class="modal-actions">
+        <button id="cancel-clear-btn" class="modal-btn outline-btn">Cancel</button>
+        <button id="confirm-alert-btn" class="modal-btn destructive-btn">Delete All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Toast Portal -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
